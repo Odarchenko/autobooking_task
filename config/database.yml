@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+development:
+  <<: *default
+  database: autobooking_task_development
+test:
+  <<: *default
+  database: autobooking_task_test
+production:
+  <<: *default
+  database: autobooking_task_production
+  username: root
+  password: 123456
